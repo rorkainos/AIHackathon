@@ -1,0 +1,17 @@
+site_name: Todo App Hackathon
+theme:
+  name: material
+plugins:
+  - tags
+nav:
+  - Technical Documentation:
+      - Overview: technical/index.md
+  - Business Documentation:
+      - Overview: business/index.md
+      - Todo Actions:
+          - Create Todo: business/create-todo.md
+          - Read Todo: business/read-todo.md
+          - Update Todo: business/update-todo.md
+          - Delete Todo: business/delete-todo.md
+          - Complete Day: business/complete-day.md
+  - Tags: tags.md
