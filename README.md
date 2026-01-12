@@ -40,16 +40,18 @@ A modern, feature-rich TODO application built with React, TypeScript, and Tailwi
 - **State Management:** Zustand (with localStorage persistence)
 - **Styling:** Tailwind CSS
 - **Date Handling:** date-fns
+- **Documentation:** MkDocs with Material theme
 
 ## Getting Started
 
 ### Prerequisites
 - Node.js 18+ and npm
+- Python and pip (for MkDocs documentation)
 
 ### Installation
 
 ```bash
-# Install dependencies
+# Install Node.js dependencies
 npm install
 
 # Start development server
@@ -118,6 +120,43 @@ Each TODO displays a real-time countdown showing:
 
 Format: `2d 5h 30m 15s` or `Overdue by 1h 20m`
 
+## Documentation
+
+This project uses MkDocs to generate static documentation. We are using the Material theme for a modern look.
+
+### MkDocs Installation
+
+To install the documentation run the following command:
+```bash
+pip install mkdocs mkdocs-material
+```
+
+### Running the Documentation Server
+
+To preview the documentation locally:
+
+```bash
+cd docs
+mkdocs serve
+```
+
+The documentation will be available at `http://127.0.0.1:8000/`
+
+### Building the Documentation
+
+To build the static site:
+
+```bash
+cd docs
+mkdocs build
+```
+
+The built site will be in the `docs/site` directory.
+
+### Deploying the Documentation
+
+Upload the contents of the `docs/site` directory to your web hosting service.
+
 ## Data Storage
 
 All data is stored locally in your browser using localStorage:
@@ -139,19 +178,24 @@ All data is stored locally in your browser using localStorage:
 ## Project Structure
 
 ```
+docs/                 # MkDocs documentation
+├── mkdocs.yml        # MkDocs configuration
+└── docs/             # Documentation source files
+    ├── technical/    # Technical docs
+    └── business/     # Business docs
 src/
-├── components/           # React components
-│   ├── layout/          # Header, Layout wrapper
-│   ├── todo/            # TODO form, item, list, timer
-│   ├── calendar/        # Calendar view
-│   ├── timeline/        # Timeline view
-│   └── common/          # Reusable: Button, Modal, Dialog
-├── store/               # Zustand state management
-├── types/               # TypeScript interfaces
-├── utils/               # Date, countdown utilities
-├── hooks/               # Custom React hooks
-├── App.tsx              # Main app component
-└── main.tsx             # Entry point
+├── components/       # React components
+│   ├── layout/       # Header, Layout wrapper
+│   ├── todo/         # TODO form, item, list, timer
+│   ├── calendar/     # Calendar view
+│   ├── timeline/     # Timeline view
+│   └── common/       # Reusable: Button, Modal, Dialog
+├── store/            # Zustand state management
+├── types/            # TypeScript interfaces
+├── utils/            # Date, countdown utilities
+├── hooks/            # Custom React hooks
+├── App.tsx           # Main app component
+└── main.tsx          # Entry point
 ```
 
 ## Performance
