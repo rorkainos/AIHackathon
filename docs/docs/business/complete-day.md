@@ -26,5 +26,5 @@ Completing a day allows users to archive all TODOs for a specific date and lock 
 - No new TODOs can be added to completed days
 - Existing TODOs on completed days cannot be edited or deleted
 - TODOs remain visible for reference
-- Completion can be done multiple times (overwrites previous completion)
+- Once a day is completed, it remains locked and cannot be completed again
 - Completed day records are stored in localStorage

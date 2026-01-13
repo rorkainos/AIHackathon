@@ -1,13 +1,25 @@
 site_name: Todo App Hackathon
 theme:
-  name: material
+  name: mkdocs
 plugins:
-  - tags
+  - search
 nav:
   - Technical Documentation:
       - Overview: technical/index.md
   - Business Documentation:
       - Overview: business/index.md
+      - Business Overview: business/business_overview.md
+      - Capabilities and Scope: business/capabilities_and_scope.md
+      - Users, Roles, and Permissions: business/users_roles_permissions.md
+      - UI Pages and User Flows: business/ui_pages_and_flows.md
+      - Core Business Workflows: business/core_business_workflows.md
+      - Business Data Model: business/business_data_model.md
+      - Data Lifecycle and Flows: business/data_lifecycle_and_flows.md
+      - Business Rules and Constraints: business/business_rules_and_constraints.md
+      - Audit Logging and Traceability: business/audit_logging_and_traceability.md
+      - Reporting and Analytics: business/reporting_and_analytics.md
+      - Compliance and Governance: business/compliance_and_governance.md
+      - Assumptions and Open Questions: business/assumptions_and_open_questions.md
       - Todo Actions:
           - Create Todo: business/create-todo.md
           - Read Todo: business/read-todo.md
