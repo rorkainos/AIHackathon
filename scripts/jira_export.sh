@@ -2,6 +2,11 @@
 set -euo pipefail
 
 # -----------------------------
+# Script to export Jira tickets from a specified project into a JSON file.
+# Requires JIRA_EMAIL and JIRA_API_TOKEN environment variables to be set.
+# Usage: bash scripts/jira_export.sh
+
+# -----------------------------
 # Configuration
 # -----------------------------
 JIRA_BASE_URL="https://documentator.atlassian.net"
