@@ -1,8 +1,8 @@
 site_name: Todo App Hackathon
 theme:
-  name: material
+  name: mkdocs
 plugins:
-  - tags
+  - search
 nav:
   - Technical Documentation:
       - Overview: technical/index.md
