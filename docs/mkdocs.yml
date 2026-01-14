@@ -6,6 +6,14 @@ plugins:
 nav:
   - Technical Documentation:
       - Overview: technical/index.md
+      - Architecture: technical/architecture.md
+      - Components: technical/components.md
+      - State Management: technical/state-management.md
+      - Data Models: technical/data-models.md
+      - Utilities: technical/utilities.md
+      - Custom Hooks: technical/hooks.md
+      - Styling: technical/styling.md
+      - Build & Deployment: technical/build-deployment.md
   - Business Documentation:
       - Overview: business/index.md
       - Views:
