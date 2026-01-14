@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# prompt setup
+.github/prompts/user-prompt-setup.json
