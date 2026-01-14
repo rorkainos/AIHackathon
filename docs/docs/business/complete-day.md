@@ -12,7 +12,7 @@ Completing a day allows users to archive all TODOs for a specific date and lock 
 
 1. User views TODOs for a day in Timeline view
 2. User clicks the "Complete Day" button at the bottom
-3. System shows confirmation dialog listing all TODOs for the day
+3. System shows a confirmation dialog warning that the day will be locked
 4. User confirms completion
 5. System creates a CompletedDay record with the date and TODO IDs
 6. Day is marked as locked with visual indicators
@@ -24,7 +24,7 @@ Completing a day allows users to archive all TODOs for a specific date and lock 
 - Completion archives all TODOs for that date
 - Completed days show lock icons in calendar/timeline
 - No new TODOs can be added to completed days
-- Existing TODOs on completed days cannot be edited or deleted
+- Existing TODOs on completed days cannot be edited, deleted, or marked complete/incomplete
 - TODOs remain visible for reference
 - Once a day is completed, it remains locked and cannot be completed again
 - Completed day records are stored in localStorage

@@ -1,17 +1,7 @@
 [
   {
-    "key": "DOC-3",
-    "title": "Tech and business documentation prompts",
-    "description": ""
-  },
-  {
     "key": "DOC-2",
-    "title": "ToDo App Skeleton",
-    "description": ""
-  },
-  {
-    "key": "DOC-1",
-    "title": "Integrate documentation with MkDocs",
+    "title": "Add Summary View",
     "description": ""
   }
 ]

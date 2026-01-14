@@ -17,7 +17,7 @@ Creating a new todo item allows users to add tasks to their list with a specific
 5. User clicks "Add TODO"
 6. System validates that the due date is not on a completed (locked) day when saving
 7. Todo is saved to localStorage with a unique ID and timestamps
-8. User receives visual confirmation and the todo appears in the current view
+8. User receives visual confirmation and the calendar/timeline updates to reflect the new todo
 
 ## Business Rules
 
