@@ -246,6 +246,7 @@ Used for all datetime fields (`dueDateTime`, `createdAt`, `updatedAt`, `complete
 **Format**: `YYYY-MM-DDTHH:mm:ss.sssZ`
 
 **Benefits**:
+
 - Unambiguous timezone (UTC)
 - Sortable as strings
 - Parseable by `new Date()`
@@ -262,6 +263,7 @@ Used for date-only fields (`CompletedDay.date`) and date-based operations:
 **Format**: `YYYY-MM-DD`
 
 **Benefits**:
+
 - Consistent date representation
 - Sortable as strings
 - Timezone-independent
@@ -290,6 +292,7 @@ const newTodoData: NewTodoData = {
 ```
 
 Fields that are auto-generated:
+
 - `id`: Generated using `crypto.randomUUID()`
 - `completed`: Defaults to `false`
 - `createdAt`: Set to current timestamp
@@ -313,6 +316,7 @@ const updates: TodoUpdates = {
 ```
 
 Fields that can be updated:
+
 - `title`
 - `description`
 - `dueDateTime`

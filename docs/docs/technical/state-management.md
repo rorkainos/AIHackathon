@@ -18,6 +18,7 @@ The Todo App uses Zustand for state management, providing a lightweight, perform
 **Location**: [src/store/useTodoStore.ts](../../../src/store/useTodoStore.ts)
 
 The application maintains a single global store that manages:
+
 - Todo items (`todos` array)
 - Completed days (`completedDays` array)
 - CRUD operations and business logic
@@ -107,15 +108,18 @@ addTodo: (todoData) => {
 ```
 
 **Parameters**:
+
 - `todoData`: Omit<Todo, 'id' | 'createdAt' | 'updatedAt' | 'completed'>
   - `title`: string (required)
   - `description`: string
   - `dueDateTime`: string (ISO 8601 format)
 
 **Throws**:
+
 - Error if day is completed (locked)
 
 **Side Effects**:
+
 - Generates UUID for new todo
 - Sets completion to false
 - Adds timestamps
@@ -169,15 +173,18 @@ updateTodo: (id, updates) => {
 ```
 
 **Parameters**:
+
 - `id`: string (UUID of todo to update)
 - `updates`: Partial<Omit<Todo, 'id' | 'createdAt'>>
   - Any combination of: `title`, `description`, `dueDateTime`, `completed`, `updatedAt`
 
 **Throws**:
+
 - Error if original day is completed
 - Error if moving to a completed day
 
 **Side Effects**:
+
 - Updates `updatedAt` timestamp
 - Persists to localStorage
 
@@ -215,12 +222,15 @@ deleteTodo: (id) => {
 ```
 
 **Parameters**:
+
 - `id`: string (UUID of todo to delete)
 
 **Throws**:
+
 - Error if day is completed
 
 **Side Effects**:
+
 - Removes todo from array
 - Persists to localStorage
 
@@ -250,11 +260,13 @@ toggleTodo: (id) => {
 ```
 
 **Parameters**:
+
 - `id`: string (UUID of todo to toggle)
 
 **Note**: Can toggle todos even on completed days (business rule exception)
 
 **Side Effects**:
+
 - Flips `completed` boolean
 - Updates `updatedAt` timestamp
 - Persists to localStorage
@@ -290,9 +302,11 @@ completeDay: (date) => {
 ```
 
 **Parameters**:
+
 - `date`: string (YYYY-MM-DD format)
 
 **Side Effects**:
+
 - Creates CompletedDay record
 - Captures current todo IDs for that date
 - Persists to localStorage
@@ -323,9 +337,11 @@ getTodosByDate: (date) => {
 ```
 
 **Parameters**:
+
 - `date`: string (YYYY-MM-DD format)
 
 **Returns**:
+
 - `Todo[]` - Array of todos for the given date
 
 **Usage**:
@@ -347,9 +363,11 @@ isDayCompleted: (date) => {
 ```
 
 **Parameters**:
+
 - `date`: string (YYYY-MM-DD format)
 
 **Returns**:
+
 - `boolean` - True if day is completed/locked
 
 **Usage**:
@@ -383,10 +401,12 @@ getTodosForDateRange: (startDate, endDate) => {
 ```
 
 **Parameters**:
+
 - `startDate`: string (YYYY-MM-DD format)
 - `endDate`: string (YYYY-MM-DD format)
 
 **Returns**:
+
 - `Record<string, Todo[]>` - Object with dates as keys, todo arrays as values
 
 **Usage**:
@@ -402,6 +422,7 @@ const monthTodos = getTodosForDateRange("2026-01-01", "2026-01-31");
 ### LocalStorage Integration
 
 Zustand's `persist` middleware automatically:
+
 - Saves state to localStorage on every update
 - Restores state on app initialization
 - Uses JSON serialization

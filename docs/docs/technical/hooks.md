@@ -148,6 +148,7 @@ useEffect(() => {
 ```
 
 **Without Cleanup**:
+
 - Intervals continue after component unmounts
 - Memory leak grows with each mount/unmount
 - Can cause performance degradation
@@ -184,6 +185,7 @@ useEffect(() => {
 ```
 
 **Why it matters**:
+
 - If `dueDateTime` changes (todo edited), interval needs new due date
 - Without dependency, interval would use stale `dueDateTime`
 - Dependency array triggers cleanup and new interval

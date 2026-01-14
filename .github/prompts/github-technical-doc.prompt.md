@@ -268,6 +268,35 @@ nav:
 - **Document Rationale**: When JIRA provides implementation context, include it
 - **Flag Conflicts**: If JIRA acceptance criteria doesn't match implementation, document in assumptions
 
+## Markdown Formatting Requirements (CRITICAL)
+
+### Bullet List Spacing
+
+**All bullet lists must have a blank line before them** to render properly in MkDocs.
+
+**Incorrect**:
+```markdown
+**Parameters**:
+- param1: string
+- param2: number
+```
+
+**Correct**:
+```markdown
+**Parameters**:
+
+- param1: string
+- param2: number
+```
+
+This applies to all contexts:
+- After bold labels (e.g., `**Benefits**:`, `**Features**:`, `**Returns**:`)
+- After plain text labels (e.g., `Common patterns:`, `Organised by feature:`)
+- After any colon followed by a list
+- In nested lists (ensure blank lines at each level)
+
+**Always verify proper spacing** before finalising any documentation file.
+
 ## JIRA Data Usage Rules
 
 When processing JIRA tickets:
