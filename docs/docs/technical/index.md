@@ -16,6 +16,7 @@ This documentation was generated from the latest codebase and JIRA tickets to en
 Learn about the overall system design, technology stack, and architectural decisions.
 
 **Topics Covered**:
+
 - Technology stack and rationale
 - System architecture diagrams
 - Design patterns (component composition, unidirectional data flow)
@@ -29,6 +30,7 @@ Learn about the overall system design, technology stack, and architectural decis
 Detailed documentation of all React components, their props, and usage examples.
 
 **Component Categories**:
+
 - **Common**: Reusable UI components (Button, Modal, ConfirmDialog)
 - **Layout**: Application structure components (Layout, Header)
 - **Calendar**: Calendar view components (CalendarView, CalendarDay)
@@ -41,6 +43,7 @@ Detailed documentation of all React components, their props, and usage examples.
 Complete guide to Zustand store implementation and state management patterns.
 
 **Topics Covered**:
+
 - Zustand store architecture
 - State structure and shape
 - CRUD operations (addTodo, updateTodo, deleteTodo, toggleTodo)
@@ -56,6 +59,7 @@ Complete guide to Zustand store implementation and state management patterns.
 TypeScript interfaces, types, and data structures used throughout the application.
 
 **Data Models**:
+
 - `Todo` - Main todo item interface
 - `CompletedDay` - Completed day tracking
 - `CountdownTime` - Countdown timer state
@@ -69,6 +73,7 @@ TypeScript interfaces, types, and data structures used throughout the applicatio
 Pure utility functions for date handling, countdown calculations, and formatting.
 
 **Utility Categories**:
+
 - **Date Utilities**: Formatting, comparison, boundaries, normalisation
 - **Countdown Utilities**: Calculations, formatting, urgency levels
 - Pure function patterns
@@ -80,6 +85,7 @@ Pure utility functions for date handling, countdown calculations, and formatting
 Documentation of custom React hooks for reusable stateful logic.
 
 **Hooks**:
+
 - `useCountdown` - Real-time countdown timer hook
 - Implementation details
 - Usage examples
@@ -92,6 +98,7 @@ Documentation of custom React hooks for reusable stateful logic.
 Guide to the Tailwind CSS styling approach and design system.
 
 **Topics Covered**:
+
 - Tailwind CSS configuration
 - Design system (colours, spacing, typography)
 - Styling patterns and best practices
@@ -106,6 +113,7 @@ Guide to the Tailwind CSS styling approach and design system.
 Information about the build process, development workflow, and deployment.
 
 **Topics Covered**:
+
 - Vite configuration
 - Build scripts and commands
 - TypeScript configuration

@@ -112,6 +112,7 @@ App
 ```
 
 **Benefits**:
+
 - Reusability: Components like Button, Modal can be used anywhere
 - Testability: Each component can be tested in isolation
 - Maintainability: Changes are localized to specific components
@@ -155,6 +156,7 @@ Stateful logic is extracted into reusable hooks:
 - Future hooks: `useTodoFilters`, `useKeyboardShortcuts`, etc.
 
 **Benefits**:
+
 - Logic reuse across multiple components
 - Separation of concerns
 - Easier testing of stateful behavior
@@ -207,28 +209,33 @@ graph TB
 
 ### `/components`
 Organized by feature and responsibility:
+
 - **common/**: Framework-agnostic, reusable UI components
 - **layout/**: Application structure and navigation
 - **calendar/**, **timeline/**, **todo/**: Feature-specific components
 
 ### `/store`
 Centralized state management:
+
 - Single source of truth for application state
 - Actions and selectors co-located with state
 
 ### `/types`
 TypeScript definitions:
+
 - Shared interfaces prevent duplication
 - Single import point for all types
 
 ### `/utils`
 Pure functions:
+
 - No side effects or external dependencies
 - Easily testable
 - Organized by domain (date, countdown)
 
 ### `/hooks`
 Custom React hooks:
+
 - Reusable stateful logic
 - Separated from components for clarity
 

@@ -11,7 +11,143 @@ tags:
 
 ## Overview
 
-The Todo App is built using a component-based architecture with React functional components. Components are organized by feature and responsibility, promoting reusability and maintainability.
+The Todo App is built using a component-based architecture with React functional components. Components are organised by feature and responsibility, promoting reusability and maintainability.
+
+This page serves as an index to all component documentation. Each component has its own detailed page with props, usage examples, and implementation details.
+
+## Component Hierarchy
+
+```
+App (Root)
+├── Layout
+│   ├── Header
+│   │   ├── Button (View Switcher)
+│   │   └── Button (Add TODO)
+│   └── [Content Area]
+│       ├── CalendarView
+│       │   └── CalendarDay (×35-42 per month)
+│       └── TimelineView
+│           └── TimelineGroup (per date)
+│               └── TodoList
+│                   └── TodoItem (per todo)
+│                       ├── CountdownTimer
+│                       ├── Button (Edit)
+│                       └── Button (Delete)
+├── Modal
+│   └── TodoForm
+│       └── Button (Submit)
+└── ConfirmDialog
+    ├── Button (Confirm)
+    └── Button (Cancel)
+```
+
+## Common Components
+
+Reusable UI components used throughout the application.
+
+- **[Button](./components/button.md)** - Reusable button with variants (primary, secondary, danger) and sizes
+- **[Modal](./components/modal.md)** - Overlay modal for forms and content
+- **[ConfirmDialog](./components/confirm-dialog.md)** - Confirmation dialog for destructive actions
+
+## Layout Components
+
+Components that provide the application structure and navigation.
+
+- **[Layout](./components/layout.md)** - Main layout wrapper with consistent page structure
+- **[Header](./components/header.md)** - Application header with navigation and actions
+
+## Calendar Components
+
+Components for the monthly calendar view.
+
+- **[CalendarView](./components/calendar-view.md)** - Monthly calendar grid with navigation
+- **[CalendarDay](./components/calendar-day.md)** - Individual day cell with todo count and status
+
+## Timeline Components
+
+Components for the chronological timeline view.
+
+- **[TimelineView](./components/timeline-view.md)** - Chronological list of todos grouped by date
+- **[TimelineGroup](./components/timeline-group.md)** - Groups todos for a specific date
+
+## Todo Components
+
+Components for displaying and managing todos.
+
+- **[TodoList](./components/todo-list.md)** - List container for todo items
+- **[TodoItem](./components/todo-item.md)** - Individual todo card with actions and countdown
+- **[TodoForm](./components/todo-form.md)** - Form for creating or editing todos
+- **[CountdownTimer](./components/countdown-timer.md)** - Real-time countdown display
+
+## Component Best Practices
+
+### Props Interface
+
+All components define explicit TypeScript interfaces for props:
+
+```typescript
+interface ComponentProps {
+  // Define all props with types
+}
+```
+
+### Forward Refs
+
+Components that need ref access use `React.forwardRef`:
+
+```typescript
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ variant, ...props }, ref) => {
+    // Component implementation
+  }
+);
+```
+
+### Default Props
+
+Use default parameters for optional props:
+
+```typescript
+const Button = ({ variant = 'primary', size = 'md', ...props }) => {
+  // Component implementation
+};
+```
+
+### Event Handlers
+
+Use descriptive handler names with `on` prefix:
+
+```typescript
+interface TodoItemProps {
+  onEdit: () => void;
+  onDelete: () => void;
+  onToggle: () => void;
+}
+```
+
+### Composition
+
+Build complex UIs from simpler components:
+
+```tsx
+// Good: Composition
+<TimelineGroup>
+  <TodoList>
+    <TodoItem />
+  </TodoList>
+</TimelineGroup>
+
+// Avoid: Monolithic components
+<TimelineWithEverything />
+```
+
+## Related Documentation
+
+- [Architecture](./architecture.md) - Overall system design
+- [State Management](./state-management.md) - Component-store integration
+- [Custom Hooks](./hooks.md) - useCountdown implementation
+- [Styling](./styling.md) - Tailwind patterns used
+
 
 ## Component Hierarchy
 

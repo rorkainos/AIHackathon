@@ -45,9 +45,11 @@ export const formatDate = (date: string | Date): string => {
 ```
 
 **Parameters**:
+
 - `date`: string | Date - Input date
 
 **Returns**:
+
 - `string` - Date in YYYY-MM-DD format
 
 **Example**:
@@ -57,6 +59,7 @@ formatDate(new Date(2026, 0, 14));      // "2026-01-14"
 ```
 
 **Use Cases**:
+
 - Calendar date display
 - Date-based grouping
 - Filename generation
@@ -74,9 +77,11 @@ export const formatDateTime = (date: string | Date): string => {
 ```
 
 **Parameters**:
+
 - `date`: string | Date - Input datetime
 
 **Returns**:
+
 - `string` - Human-readable datetime
 
 **Example**:
@@ -86,6 +91,7 @@ formatDateTime("2026-01-14T15:30:00.000Z");
 ```
 
 **Use Cases**:
+
 - Todo due date display
 - Detailed timestamp presentation
 
@@ -102,9 +108,11 @@ export const formatTime = (date: string | Date): string => {
 ```
 
 **Parameters**:
+
 - `date`: string | Date - Input datetime
 
 **Returns**:
+
 - `string` - Time in 12-hour format
 
 **Example**:
@@ -114,6 +122,7 @@ formatTime("2026-01-14T15:30:00.000Z");
 ```
 
 **Use Cases**:
+
 - Clock display
 - Time-only information
 
@@ -130,9 +139,11 @@ export const formatDateShort = (date: string | Date): string => {
 ```
 
 **Parameters**:
+
 - `date`: string | Date - Input date
 
 **Returns**:
+
 - `string` - Short date with day of week
 
 **Example**:
@@ -142,6 +153,7 @@ formatDateShort("2026-01-14T15:30:00.000Z");
 ```
 
 **Use Cases**:
+
 - Timeline date headers
 - Compact date displays
 
@@ -158,9 +170,11 @@ export const formatDateFull = (date: string | Date): string => {
 ```
 
 **Parameters**:
+
 - `date`: string | Date - Input date
 
 **Returns**:
+
 - `string` - Full date with day name
 
 **Example**:
@@ -170,6 +184,7 @@ formatDateFull("2026-01-14T15:30:00.000Z");
 ```
 
 **Use Cases**:
+
 - Headers
 - Detailed date presentation
 
@@ -186,9 +201,11 @@ export const isOverdue = (dueDateTime: string): boolean => {
 ```
 
 **Parameters**:
+
 - `dueDateTime`: string - Due date/time (ISO 8601)
 
 **Returns**:
+
 - `boolean` - True if datetime has passed
 
 **Example**:
@@ -198,6 +215,7 @@ isOverdue("2026-12-31T23:59:00.000Z"); // false (if current date is before)
 ```
 
 **Use Cases**:
+
 - Urgency indicators
 - Filtering overdue todos
 
@@ -214,9 +232,11 @@ export const getDayStart = (date: string | Date): Date => {
 ```
 
 **Parameters**:
+
 - `date`: string | Date - Input date
 
 **Returns**:
+
 - `Date` - Start of day (midnight)
 
 **Example**:
@@ -226,6 +246,7 @@ getDayStart("2026-01-14T15:30:00.000Z");
 ```
 
 **Use Cases**:
+
 - Date comparisons
 - Date range boundaries
 
@@ -242,9 +263,11 @@ export const getDayEnd = (date: string | Date): Date => {
 ```
 
 **Parameters**:
+
 - `date`: string | Date - Input date
 
 **Returns**:
+
 - `Date` - End of day (last millisecond)
 
 **Example**:
@@ -254,6 +277,7 @@ getDayEnd("2026-01-14T10:00:00.000Z");
 ```
 
 **Use Cases**:
+
 - Date range boundaries
 - Same-day filtering
 
@@ -270,10 +294,12 @@ export const getSecondsDifference = (from: Date, to: Date): number => {
 ```
 
 **Parameters**:
+
 - `from`: Date - Start date
 - `to`: Date - End date
 
 **Returns**:
+
 - `number` - Seconds difference (positive if `to` is after `from`)
 
 **Example**:
@@ -284,6 +310,7 @@ getSecondsDifference(from, to); // 3600
 ```
 
 **Use Cases**:
+
 - Countdown calculations
 - Duration measurements
 
@@ -301,9 +328,11 @@ export const normalizeDate = (date: string | Date): string => {
 ```
 
 **Parameters**:
+
 - `date`: string | Date - Input datetime
 
 **Returns**:
+
 - `string` - Normalized date (YYYY-MM-DD)
 
 **Example**:
@@ -314,6 +343,7 @@ normalizeDate("2026-01-14T23:59:59.999Z"); // "2026-01-14"
 ```
 
 **Use Cases**:
+
 - Date-based lookups in store
 - Grouping todos by date
 - Day completion logic
@@ -333,6 +363,7 @@ export const getTodayDate = (): string => {
 ```
 
 **Returns**:
+
 - `string` - Today's date (YYYY-MM-DD)
 
 **Example**:
@@ -341,6 +372,7 @@ getTodayDate(); // "2026-01-14" (if called on Jan 14, 2026)
 ```
 
 **Use Cases**:
+
 - Jump to today functionality
 - Default date selection
 - Filtering today's todos
@@ -382,9 +414,11 @@ export const calculateCountdown = (dueDateTime: string): CountdownTime => {
 ```
 
 **Parameters**:
+
 - `dueDateTime`: string - Due date/time (ISO 8601)
 
 **Returns**:
+
 - [`CountdownTime`](./data-models.md#countdowntime) - Countdown breakdown
 
 **Example**:
@@ -413,6 +447,7 @@ calculateCountdown("2026-01-12T10:00:00.000Z");
 ```
 
 **Use Cases**:
+
 - Real-time countdown display
 - Urgency calculations
 - Used by [useCountdown hook](./hooks.md#usecountdown)
@@ -439,9 +474,11 @@ export const formatCountdown = (countdown: CountdownTime): string => {
 ```
 
 **Parameters**:
+
 - `countdown`: CountdownTime - Countdown breakdown
 
 **Returns**:
+
 - `string` - Formatted countdown string
 
 **Examples**:
@@ -478,6 +515,7 @@ formatCountdown({
 ```
 
 **Logic**:
+
 - Includes days only if > 0
 - Always includes seconds
 - Adds "Overdue by" prefix if overdue
@@ -498,12 +536,15 @@ export const getUrgencyLevel = (countdown: CountdownTime): 'overdue' | 'urgent' 
 ```
 
 **Parameters**:
+
 - `countdown`: CountdownTime - Countdown breakdown
 
 **Returns**:
+
 - `'overdue' | 'urgent' | 'warning' | 'normal'` - Urgency level
 
 **Thresholds**:
+
 - **overdue**: Past due date
 - **urgent**: < 1 hour remaining (3600 seconds)
 - **warning**: < 24 hours remaining (86400 seconds)
@@ -540,12 +581,15 @@ export const getUrgencyColor = (countdown: CountdownTime): string => {
 ```
 
 **Parameters**:
+
 - `countdown`: CountdownTime - Countdown breakdown
 
 **Returns**:
+
 - `string` - Tailwind CSS classes for text and background
 
 **Color Scheme**:
+
 - **overdue**: Red text on light red background
 - **urgent**: Dark red text on light red background
 - **warning**: Dark yellow text on light yellow background
@@ -581,12 +625,15 @@ export const getUrgencyBorderColor = (countdown: CountdownTime): string => {
 ```
 
 **Parameters**:
+
 - `countdown`: CountdownTime - Countdown breakdown
 
 **Returns**:
+
 - `string` - Tailwind CSS border color class
 
 **Border Colors**:
+
 - **overdue**: Solid red (`border-red-500`)
 - **urgent**: Light red (`border-red-400`)
 - **warning**: Yellow (`border-yellow-400`)

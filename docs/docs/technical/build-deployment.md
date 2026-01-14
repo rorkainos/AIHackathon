@@ -31,9 +31,11 @@ export default defineConfig({
 ```
 
 **Plugins**:
+
 - `@vitejs/plugin-react`: Enables React Fast Refresh, JSX transformation
 
 **Default Settings**:
+
 - Entry point: `index.html`
 - Output directory: `dist/`
 - Public assets: `public/`
@@ -62,6 +64,7 @@ export default {
 ```
 
 **Plugins**:
+
 - `tailwindcss`: Processes Tailwind directives
 - `autoprefixer`: Adds vendor prefixes for browser compatibility
 
@@ -86,6 +89,7 @@ npm run dev
 ```
 
 **What it does**:
+
 - Starts Vite dev server on `http://localhost:5173`
 - Enables Hot Module Replacement (HMR)
 - Watches for file changes
@@ -102,6 +106,7 @@ npm run dev
 ```
 
 **Features**:
+
 - Instant server start (~200ms)
 - Lightning-fast HMR (<50ms)
 - On-demand compilation
@@ -137,6 +142,7 @@ dist/
 ```
 
 **Optimizations**:
+
 - Code splitting
 - Tree shaking (removes unused code)
 - Minification (Terser for JS, cssnano for CSS)
@@ -150,12 +156,14 @@ npm run preview
 ```
 
 **What it does**:
+
 - Serves the `dist/` directory locally
 - Runs on `http://localhost:4173`
 - Tests production build before deployment
 - Mimics production environment
 
 **Use Cases**:
+
 - Verify build output
 - Test production optimizations
 - Check for build-related issues
@@ -179,6 +187,7 @@ From [package.json](../../../package.json):
 ```
 
 **Sizes** (approximate, minified + gzipped):
+
 - `react` + `react-dom`: ~130 KB
 - `zustand`: ~1 KB
 - `date-fns`: ~10-20 KB (only imported functions)

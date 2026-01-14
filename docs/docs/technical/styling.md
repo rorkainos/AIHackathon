@@ -35,6 +35,7 @@ export default {
 ### Content Paths
 
 Tailwind scans these files for class usage:
+
 - `index.html` - HTML entry point
 - `src/**/*.{js,ts,jsx,tsx}` - All source files
 
@@ -104,6 +105,7 @@ Uses Tailwind's default spacing scale (0.25rem increments):
 - `gap-2`, `gap-4`: Flexbox/Grid gaps
 
 Common patterns:
+
 - Button padding: `px-4 py-2` (1rem × 0.5rem)
 - Card padding: `p-4` (1rem)
 - Section spacing: `mb-6` (1.5rem)
@@ -143,6 +145,7 @@ const sizeStyles = {
 ```
 
 **Features**:
+
 - Base styles shared across all variants
 - Variant-specific colours and focus rings
 - Size variations
@@ -161,6 +164,7 @@ Used for TodoItem, CalendarDay:
 ```
 
 **Elements**:
+
 - Border with urgency colour
 - Rounded corners
 - Padding for content
@@ -178,6 +182,7 @@ Used for TodoItem, CalendarDay:
 ```
 
 **Elements**:
+
 - Fixed positioning covering viewport
 - Semi-transparent backdrop
 - Flexbox centering
@@ -194,6 +199,7 @@ Used for TodoItem, CalendarDay:
 ```
 
 **Elements**:
+
 - Full width
 - Padding for touch targets
 - Border for definition
@@ -475,6 +481,7 @@ All interactive elements have visible focus states:
 ### Colour Contrast
 
 Ensure sufficient contrast ratios:
+
 - Text on backgrounds: 4.5:1 minimum (WCAG AA)
 - Primary button: White on blue-600 ✅
 - Secondary button: Gray-900 on gray-200 ✅
