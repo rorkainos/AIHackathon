@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -euo pipefail
 
 # -----------------------------
 # Script to export Jira tickets from a specified project into a JSON file.
 # Requires JIRA_EMAIL and JIRA_API_TOKEN environment variables to be set.
-# Usage: bash scripts/jira_export.sh
+# Usage: /bin/bash scripts/jira_export.sh
 
 # -----------------------------
 # Configuration
@@ -33,6 +33,7 @@ urlencode() {
 # -----------------------------
 need_cmd curl
 need_cmd jq
+need_cmd git
 
 if [[ -z "${JIRA_EMAIL:-}" ]]; then
   echo "Error: JIRA_EMAIL environment variable is not set" >&2
@@ -80,19 +81,45 @@ API_BASE=$(detect_jira_base)
 echo "Using API base: $API_BASE" >&2
 
 # -----------------------------
-# Fetch Tickets
+# Detect Issue Key from Branch
 # -----------------------------
-JQL="project = ${JIRA_PROJECT} ORDER BY created DESC"
-JQL_ENCODED=$(urlencode "$JQL")
 
-echo "Fetching $MAX_RESULTS most recent tickets from project: $JIRA_PROJECT" >&2
+BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)
+if [[ -z "$BRANCH_NAME" || "$BRANCH_NAME" == "HEAD" ]]; then
+  echo "Error: Could not determine current git branch (detached HEAD?)" >&2
+  exit 1
+fi
+
+# Expected branch format: {typeOfTask}/{ticketNo}/{description}
+# Example: feature/doc-2/add-jira-export
+ISSUE_KEY_RAW=""
+if [[ "$BRANCH_NAME" =~ ([A-Za-z][A-Za-z0-9]+-[0-9]+) ]]; then
+  ISSUE_KEY_RAW="${BASH_REMATCH[1]}"
+fi
+
+# Jira keys are typically uppercase (e.g. DOC-2). Normalize only for the request.
+ISSUE_KEY=$(printf '%s' "$ISSUE_KEY_RAW" | tr '[:lower:]' '[:upper:]')
+
+if [[ -z "$ISSUE_KEY" ]]; then
+  echo "Error: Could not find a Jira issue key in branch name: $BRANCH_NAME" >&2
+  echo "Expected something like: feature/doc-2/your-description" >&2
+  exit 1
+fi
+
+echo "Detected branch: $BRANCH_NAME" >&2
+echo "Fetching Jira ticket: $ISSUE_KEY" >&2
+
+# -----------------------------
+# Fetch Ticket
+# -----------------------------
+JQL="key = ${ISSUE_KEY}"
 
 RESPONSE=$(curl -s -w '\n%{http_code}' \
   -u "${JIRA_EMAIL}:${JIRA_API_TOKEN}" \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
   -X POST \
-  -d "{\"jql\":\"${JQL}\",\"maxResults\":${MAX_RESULTS},\"fields\":[\"summary\",\"description\"]}" \
+  -d "{\"jql\":\"${JQL}\",\"maxResults\":1,\"fields\":[\"summary\",\"description\"]}" \
   "${API_BASE}/search/jql")
 
 HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
