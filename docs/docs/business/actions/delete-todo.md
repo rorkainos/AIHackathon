@@ -12,7 +12,7 @@ Deleting a todo removes it permanently from the user's TODO list.
 
 ## Process
 
-1. User finds the TODO item in Timeline view
+1. User switches to Timeline view
 2. User clicks the "Delete" button on the TODO
 3. System shows confirmation dialog
 4. User confirms deletion or cancels the action
