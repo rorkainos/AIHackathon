@@ -3,6 +3,7 @@ tags:
   - view
   - calendar
 ---
+
 # Calendar View
 
 ## Overview
@@ -10,16 +11,19 @@ tags:
 The calendar view provides a monthly grid interface for visualizing TODOs organized by date
 
 ## Access
+
 Select "Calendar" from the header navigation
 
 ## Display Features
 
 - Calendar shows one month at a time with navigation controls allowing users to change months:
-    - "Today" button to jump to current month
-    - "Prev" button to jump to previous month
-    - "Next" button to jump to next month
+
+  - "Today" button to jump to current month
+  - "Prev" button to jump to previous month
+  - "Next" button to jump to next month
 
 - Day cells showing date numbers
+- The current date displays a stronger blue border for enhanced visibility
 - Badge indicators with TODO counts per day (blue background regardless of TODO status)
 - Completed days are highlighted with yellow background and a lock icon below the day number
 - Incomplete days have white background

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Todo } from '../../types';
-import { getTodayDate } from '../../utils/dateUtils';
+import React from "react";
+import { Todo } from "../../types";
+import { getTodayDate } from "../../utils/dateUtils";
 
 interface CalendarDayProps {
   date: string;
@@ -17,7 +17,7 @@ export const CalendarDay: React.FC<CalendarDayProps> = ({
   isCurrentMonth,
   onClick,
 }) => {
-  const dayNumber = parseInt(date.split('-')[2]);
+  const dayNumber = parseInt(date.split("-")[2]);
   const today = getTodayDate();
   const isToday = date === today;
 
@@ -27,17 +27,22 @@ export const CalendarDay: React.FC<CalendarDayProps> = ({
     <button
       onClick={onClick}
       className={`
-        aspect-square p-2 rounded-lg border-2 transition-colors text-sm
+        aspect-square p-2 rounded-lg transition-colors text-sm
+        ${isToday ? "border-4 border-blue-500" : "border-2 border-gray-200"}
         ${
           isCurrentMonth
-            ? 'bg-white hover:bg-blue-50 border-gray-200 hover:border-blue-300'
-            : 'bg-gray-50 border-gray-100'
+            ? "bg-white hover:bg-blue-50 hover:border-blue-300"
+            : "bg-gray-50 border-gray-100"
         }
-        ${isToday ? 'border-blue-500 bg-blue-50' : ''}
-        ${isCompleted ? 'border-yellow-300 bg-yellow-50' : ''}
+
+        ${isCompleted ? "border-yellow-300 bg-yellow-50" : ""}
       `}
     >
-      <div className={`font-semibold mb-1 ${isCurrentMonth ? 'text-gray-900' : 'text-gray-400'}`}>
+      <div
+        className={`font-semibold mb-1 ${
+          isCurrentMonth ? "text-gray-900" : "text-gray-400"
+        }`}
+      >
         {dayNumber}
       </div>
 
@@ -46,7 +51,11 @@ export const CalendarDay: React.FC<CalendarDayProps> = ({
         <div className="text-xs">
           {isCompleted ? (
             <div className="inline-flex items-center gap-0.5">
-              <svg className="w-3 h-3 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+              <svg
+                className="w-3 h-3 text-yellow-600"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
                 <path
                   fillRule="evenodd"
                   d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
