@@ -7,39 +7,37 @@ tags:
 
 # Architecture
 
-**Last Updated**: 2026-01-15
-
 ---
 
 ## Tech Stack
 
 ### Core Technologies
 
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| React | 18.3.1 | UI library |
-| TypeScript | 5.7.2 | Type safety |
-| Vite | 6.0.5 | Build tool |
-| Tailwind CSS | 3.4.17 | Styling |
+| Technology   | Version | Purpose     |
+| ------------ | ------- | ----------- |
+| React        | 18.3.1  | UI library  |
+| TypeScript   | 5.7.2   | Type safety |
+| Vite         | 6.0.5   | Build tool  |
+| Tailwind CSS | 3.4.17  | Styling     |
 
 ### State Management
 
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| Zustand | 5.0.2 | State management with persistence |
+| Technology | Version | Purpose                           |
+| ---------- | ------- | --------------------------------- |
+| Zustand    | 5.0.2   | State management with persistence |
 
 ### Utilities
 
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| date-fns | 4.1.0 | Date manipulation |
+| Technology | Version | Purpose           |
+| ---------- | ------- | ----------------- |
+| date-fns   | 4.1.0   | Date manipulation |
 
 ### Documentation
 
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| MkDocs | Latest | Documentation site generator |
-| Material for MkDocs | Latest | Documentation theme |
+| Technology          | Version | Purpose                      |
+| ------------------- | ------- | ---------------------------- |
+| MkDocs              | Latest  | Documentation site generator |
+| Material for MkDocs | Latest  | Documentation theme          |
 
 ---
 
@@ -122,7 +120,7 @@ graph TB
     UI[React UI Layer]
     Store[Zustand Store]
     LS[LocalStorage]
-    
+
     User -->|Interacts| UI
     UI -->|Reads State| Store
     UI -->|Dispatches Actions| Store

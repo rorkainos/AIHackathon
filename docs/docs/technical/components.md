@@ -7,8 +7,6 @@ tags:
 
 # Components
 
-**Last Updated**: 2026-01-15
-
 ---
 
 ## Component Hierarchy
@@ -40,8 +38,8 @@ App (Root)
 
 ```typescript
 interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'danger';
-  size?: 'sm' | 'md' | 'lg';
+  variant?: "primary" | "secondary" | "danger";
+  size?: "sm" | "md" | "lg";
   fullWidth?: boolean;
   children: React.ReactNode;
   onClick?: () => void;
@@ -175,7 +173,11 @@ interface CountdownTimerProps {
 ### Modal
 
 ```tsx
-<Modal isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} title="Add TODO">
+<Modal
+  isOpen={isFormOpen}
+  onClose={() => setIsFormOpen(false)}
+  title="Add TODO"
+>
   <TodoForm onSubmit={handleSubmit} onCancel={() => setIsFormOpen(false)} />
 </Modal>
 ```
@@ -228,21 +230,21 @@ interface CountdownTimerProps {
 
 ## Component Locations
 
-| Component | File |
-|-----------|------|
-| Button | `src/components/common/Button.tsx` |
-| Modal | `src/components/common/Modal.tsx` |
-| ConfirmDialog | `src/components/common/ConfirmDialog.tsx` |
-| Layout | `src/components/layout/Layout.tsx` |
-| Header | `src/components/layout/Header.tsx` |
-| CalendarView | `src/components/calendar/CalendarView.tsx` |
-| CalendarDay | `src/components/calendar/CalendarDay.tsx` |
-| TimelineView | `src/components/timeline/TimelineView.tsx` |
-| TimelineGroup | `src/components/timeline/TimelineGroup.tsx` |
-| TodoList | `src/components/todo/TodoList.tsx` |
-| TodoItem | `src/components/todo/TodoItem.tsx` |
-| TodoForm | `src/components/todo/TodoForm.tsx` |
-| CountdownTimer | `src/components/todo/CountdownTimer.tsx` |
+| Component      | File                                        |
+| -------------- | ------------------------------------------- |
+| Button         | `src/components/common/Button.tsx`          |
+| Modal          | `src/components/common/Modal.tsx`           |
+| ConfirmDialog  | `src/components/common/ConfirmDialog.tsx`   |
+| Layout         | `src/components/layout/Layout.tsx`          |
+| Header         | `src/components/layout/Header.tsx`          |
+| CalendarView   | `src/components/calendar/CalendarView.tsx`  |
+| CalendarDay    | `src/components/calendar/CalendarDay.tsx`   |
+| TimelineView   | `src/components/timeline/TimelineView.tsx`  |
+| TimelineGroup  | `src/components/timeline/TimelineGroup.tsx` |
+| TodoList       | `src/components/todo/TodoList.tsx`          |
+| TodoItem       | `src/components/todo/TodoItem.tsx`          |
+| TodoForm       | `src/components/todo/TodoForm.tsx`          |
+| CountdownTimer | `src/components/todo/CountdownTimer.tsx`    |
 
 ---
 

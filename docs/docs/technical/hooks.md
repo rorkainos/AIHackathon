@@ -7,8 +7,6 @@ tags:
 
 # Custom Hooks
 
-**Last Updated**: 2026-01-15
-
 ---
 
 ## useCountdown
@@ -21,25 +19,25 @@ Real-time countdown timer that updates every second for todo due dates.
 
 ### Parameters
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
+| Parameter     | Type   | Description            |
+| ------------- | ------ | ---------------------- |
 | `dueDateTime` | string | ISO 8601 due date/time |
 
 ### Returns
 
-| Return | Type | Description |
-|--------|------|-------------|
+| Return      | Type            | Description             |
+| ----------- | --------------- | ----------------------- |
 | `countdown` | `CountdownTime` | Current countdown state |
 
 ### Usage Example
 
 ```typescript
-import { useCountdown } from '../hooks/useCountdown';
-import { formatCountdown, getUrgencyColor } from '../utils/countdownUtils';
+import { useCountdown } from "../hooks/useCountdown";
+import { formatCountdown, getUrgencyColor } from "../utils/countdownUtils";
 
 function CountdownDisplay({ dueDateTime }: { dueDateTime: string }) {
   const countdown = useCountdown(dueDateTime);
-  
+
   return (
     <div className={getUrgencyColor(countdown)}>
       {formatCountdown(countdown)}

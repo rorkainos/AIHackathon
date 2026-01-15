@@ -7,8 +7,6 @@ tags:
 
 # Data Models
 
-**Last Updated**: 2026-01-15
-
 **Location**: `src/types/index.ts`
 
 ---
@@ -27,15 +25,15 @@ interface Todo {
 }
 ```
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `id` | string | UUID v4 |
-| `title` | string | Todo title |
-| `description` | string | Additional details |
-| `dueDateTime` | string | ISO 8601 datetime |
-| `completed` | boolean | Completion status |
-| `createdAt` | string | ISO 8601 timestamp |
-| `updatedAt` | string | ISO 8601 timestamp |
+| Field         | Type    | Description        |
+| ------------- | ------- | ------------------ |
+| `id`          | string  | UUID v4            |
+| `title`       | string  | Todo title         |
+| `description` | string  | Additional details |
+| `dueDateTime` | string  | ISO 8601 datetime  |
+| `completed`   | boolean | Completion status  |
+| `createdAt`   | string  | ISO 8601 timestamp |
+| `updatedAt`   | string  | ISO 8601 timestamp |
 
 ---
 
@@ -49,11 +47,11 @@ interface CompletedDay {
 }
 ```
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `date` | string | YYYY-MM-DD format |
-| `completedAt` | string | ISO 8601 timestamp |
-| `todoIds` | string[] | Todo IDs on this day |
+| Field         | Type     | Description          |
+| ------------- | -------- | -------------------- |
+| `date`        | string   | YYYY-MM-DD format    |
+| `completedAt` | string   | ISO 8601 timestamp   |
+| `todoIds`     | string[] | Todo IDs on this day |
 
 ---
 
@@ -70,21 +68,21 @@ interface CountdownTime {
 }
 ```
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `days` | number | Days remaining |
-| `hours` | number | Hours (0-23) |
-| `minutes` | number | Minutes (0-59) |
-| `seconds` | number | Seconds (0-59) |
-| `isOverdue` | boolean | Past due date |
-| `totalSeconds` | number | Total seconds |
+| Field          | Type    | Description    |
+| -------------- | ------- | -------------- |
+| `days`         | number  | Days remaining |
+| `hours`        | number  | Hours (0-23)   |
+| `minutes`      | number  | Minutes (0-59) |
+| `seconds`      | number  | Seconds (0-59) |
+| `isOverdue`    | boolean | Past due date  |
+| `totalSeconds` | number  | Total seconds  |
 
 ---
 
 ## ViewMode
 
 ```typescript
-type ViewMode = 'calendar' | 'timeline';
+type ViewMode = "calendar" | "timeline";
 ```
 
 ---
@@ -96,8 +94,13 @@ interface TodoStore {
   todos: Todo[];
   completedDays: CompletedDay[];
 
-  addTodo: (todo: Omit<Todo, 'id' | 'createdAt' | 'updatedAt' | 'completed'>) => void;
-  updateTodo: (id: string, updates: Partial<Omit<Todo, 'id' | 'createdAt'>>) => void;
+  addTodo: (
+    todo: Omit<Todo, "id" | "createdAt" | "updatedAt" | "completed">
+  ) => void;
+  updateTodo: (
+    id: string,
+    updates: Partial<Omit<Todo, "id" | "createdAt">>
+  ) => void;
   deleteTodo: (id: string) => void;
   toggleTodo: (id: string) => void;
   completeDay: (date: string) => void;
@@ -119,13 +122,13 @@ erDiagram
         string createdAt
         string updatedAt
     }
-    
+
     COMPLETED_DAY {
         string date PK
         string completedAt
         string[] todoIds FK
     }
-    
+
     TODO ||--o{ COMPLETED_DAY : "archived by"
 ```
 

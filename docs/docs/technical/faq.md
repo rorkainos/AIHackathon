@@ -8,8 +8,6 @@ tags:
 
 # Frequently Asked Questions
 
-**Last Updated**: 2026-01-15
-
 ---
 
 ## State Management Questions

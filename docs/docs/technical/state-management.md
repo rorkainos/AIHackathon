@@ -7,8 +7,6 @@ tags:
 
 # State Management
 
-**Last Updated**: 2026-01-15
-
 ---
 
 ## Store Structure
@@ -22,8 +20,13 @@ interface TodoStore {
   completedDays: CompletedDay[];
 
   // Actions
-  addTodo: (todo: Omit<Todo, 'id' | 'createdAt' | 'updatedAt' | 'completed'>) => void;
-  updateTodo: (id: string, updates: Partial<Omit<Todo, 'id' | 'createdAt'>>) => void;
+  addTodo: (
+    todo: Omit<Todo, "id" | "createdAt" | "updatedAt" | "completed">
+  ) => void;
+  updateTodo: (
+    id: string,
+    updates: Partial<Omit<Todo, "id" | "createdAt">>
+  ) => void;
   deleteTodo: (id: string) => void;
   toggleTodo: (id: string) => void;
   completeDay: (date: string) => void;
@@ -66,13 +69,13 @@ completedDays: CompletedDay[] = [
 
 ## Actions List
 
-| Action | Parameters | Description |
-|--------|------------|-------------|
-| `addTodo` | `todoData` | Creates a new todo |
-| `updateTodo` | `id`, `updates` | Updates an existing todo |
-| `deleteTodo` | `id` | Removes a todo |
-| `toggleTodo` | `id` | Toggles completion status |
-| `completeDay` | `date` | Marks a day as completed |
+| Action        | Parameters      | Description               |
+| ------------- | --------------- | ------------------------- |
+| `addTodo`     | `todoData`      | Creates a new todo        |
+| `updateTodo`  | `id`, `updates` | Updates an existing todo  |
+| `deleteTodo`  | `id`            | Removes a todo            |
+| `toggleTodo`  | `id`            | Toggles completion status |
+| `completeDay` | `date`          | Marks a day as completed  |
 
 ---
 

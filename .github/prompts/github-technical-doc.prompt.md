@@ -399,7 +399,6 @@ Group questions by topic area:
 - **Keep Documentation DRY**: Link between related sections rather than duplicating
 - **Preserve Existing Structure**: If a technical documentation structure exists, follow it exactly
 - **Use Diagrams**: Include Mermaid diagrams for complex relationships (architecture, data flow, component hierarchies)
-- **Include Metadata**: Add "last updated" dates and related JIRA ticket references
 - **Add Tags**: Include relevant tags for easy searching (matching category keywords)
 - **Stay Current**: Ensure code examples match actual implementation
 - **Cross-Reference**: Link to business documentation where user-facing features are explained

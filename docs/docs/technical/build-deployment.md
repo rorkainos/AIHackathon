@@ -8,16 +8,14 @@ tags:
 
 # Build & Deployment
 
-**Last Updated**: 2026-01-15
-
 ---
 
 ## Build Commands
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server on `http://localhost:5173` |
-| `npm run build` | TypeScript check + Vite production build |
+| Command           | Description                                         |
+| ----------------- | --------------------------------------------------- |
+| `npm run dev`     | Start development server on `http://localhost:5173` |
+| `npm run build`   | TypeScript check + Vite production build            |
 | `npm run preview` | Preview production build on `http://localhost:4173` |
 
 ---
@@ -26,10 +24,10 @@ tags:
 
 ### Built-in Variables
 
-| Variable | Value |
-|----------|-------|
-| `import.meta.env.DEV` | `true` in development |
-| `import.meta.env.PROD` | `true` in production |
+| Variable               | Value                             |
+| ---------------------- | --------------------------------- |
+| `import.meta.env.DEV`  | `true` in development             |
+| `import.meta.env.PROD` | `true` in production              |
 | `import.meta.env.MODE` | `'development'` or `'production'` |
 
 ### Custom Variables
@@ -70,8 +68,8 @@ Build output is static files (HTML, JS, CSS).
    ```typescript
    // vite.config.ts
    export default defineConfig({
-     base: '/repo-name/',
-   })
+     base: "/repo-name/",
+   });
    ```
 
 3. Deploy `dist/` folder
@@ -108,11 +106,11 @@ dist/
 
 ## Documentation Build
 
-| Command | Description |
-|---------|-------------|
-| `pip install mkdocs mkdocs-material` | Install MkDocs |
-| `cd docs && mkdocs serve` | Serve docs on `http://127.0.0.1:8000` |
-| `cd docs && mkdocs build` | Build docs to `docs/site/` |
+| Command                              | Description                           |
+| ------------------------------------ | ------------------------------------- |
+| `pip install mkdocs mkdocs-material` | Install MkDocs                        |
+| `cd docs && mkdocs serve`            | Serve docs on `http://127.0.0.1:8000` |
+| `cd docs && mkdocs build`            | Build docs to `docs/site/`            |
 
 ---
 
