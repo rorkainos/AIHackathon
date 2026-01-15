@@ -122,7 +122,6 @@ graph TB
     UI[React UI Layer]
     Store[Zustand Store]
     LS[LocalStorage]
-
     User -->|Interacts| UI
     UI -->|Reads State| Store
     UI -->|Dispatches Actions| Store

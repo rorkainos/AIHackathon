@@ -124,7 +124,6 @@ erDiagram
         string createdAt
         string updatedAt
     }
-
     COMPLETED_DAY {
         string date PK
         string completedAt

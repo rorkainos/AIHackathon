@@ -1,12 +1,13 @@
 ---
 tags:
   - todo
+  - timeline
 ---
 # Update Todo
 
 ## Overview
 
-Updating a todo allows users to modify existing tasks, including marking them as complete.
+Updating a TODO allows users to modify existing tasks, including marking them as complete.
 
 ## Process
 
@@ -21,9 +22,9 @@ Updating a todo allows users to modify existing tasks, including marking them as
 
 ## Business Rules
 
-- Cannot edit TODOs from completed (locked) days
-- Cannot move TODOs to completed (locked) days
-- Title is required and cannot be empty
+- It is not possible to edit TODOs from completed (locked) days
+- It is not possible to move TODOs to completed (locked) days
+- Title cannot be changed to an empty string
 - Description is optional
 - Due date/time can be changed
 - Completion status can be toggled unless the TODO's day is completed (locked)
