@@ -96,11 +96,10 @@ interface CalendarViewProps {
 
 ```typescript
 interface CalendarDayProps {
-  date: Date;
+  date: string;
+  todos: Todo[];
+  isCompleted: boolean;
   isCurrentMonth: boolean;
-  isToday: boolean;
-  todoCount: number;
-  isLocked: boolean;
   onClick: () => void;
 }
 ```

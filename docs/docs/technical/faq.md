@@ -54,6 +54,14 @@ The store throws an error. Components should wrap store actions in try-catch blo
 
 ## Component Questions
 
+### How is the current date highlighted in the calendar?
+
+The CalendarDay component uses a stronger border (`border-4`) for the current date compared to other days (`border-2`). The component internally compares the date prop against `getTodayDate()` to determine if it's the current day and applies blue border styling.
+
+**See also**: [Components](components.md)
+
+---
+
 ### How do I create a new component?
 
 Create a file in the appropriate folder under `src/components/`, define a TypeScript interface for props, and export as a named export.
