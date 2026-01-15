@@ -2,27 +2,11 @@
 tags:
   - component
   - todo
-  - form
 ---
 
-# TodoForm Component
-
-**Location**: [src/components/todo/TodoForm.tsx](../../../../src/components/todo/TodoForm.tsx)
-
-**Category**: Todo Components
+# TodoForm
 
 Form for creating or editing todos.
-
-## Props
-
-```typescript
-interface TodoFormProps {
-  todo?: Todo | null; // If editing, undefined for new
-  onSubmit: (data: Omit<Todo, 'id' | 'createdAt' | 'updatedAt' | 'completed'>) => void;
-  onCancel: () => void;
-  error?: string | null;
-}
-```
 
 ## Features
 

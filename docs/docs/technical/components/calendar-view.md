@@ -4,23 +4,9 @@ tags:
   - calendar
 ---
 
-# CalendarView Component
-
-**Location**: [src/components/calendar/CalendarView.tsx](../../../../src/components/calendar/CalendarView.tsx)
-
-**Category**: Calendar Components
+# CalendarView
 
 Monthly calendar grid displaying todos by date.
-
-## Props
-
-```typescript
-interface CalendarViewProps {
-  todos: Todo[];
-  completedDays: CompletedDay[];
-  onDayClick: (date: string) => void;
-}
-```
 
 ## Features
 

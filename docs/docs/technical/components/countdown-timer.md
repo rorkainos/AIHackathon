@@ -2,24 +2,11 @@
 tags:
   - component
   - todo
-  - timer
 ---
 
-# CountdownTimer Component
-
-**Location**: [src/components/todo/CountdownTimer.tsx](../../../../src/components/todo/CountdownTimer.tsx)
-
-**Category**: Todo Components
+# CountdownTimer
 
 Real-time countdown display showing time until due or overdue.
-
-## Props
-
-```typescript
-interface CountdownTimerProps {
-  dueDate: string;
-}
-```
 
 ## Features
 

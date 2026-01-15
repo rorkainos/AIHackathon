@@ -5,27 +5,9 @@ tags:
   - ui
 ---
 
-# ConfirmDialog Component
-
-**Location**: [src/components/common/ConfirmDialog.tsx](../../../../src/components/common/ConfirmDialog.tsx)
-
-**Category**: Common Components
+# ConfirmDialog
 
 Confirmation dialog for destructive or important actions.
-
-## Props
-
-```typescript
-interface ConfirmDialogProps {
-  isOpen: boolean;
-  title: string;
-  message: string;
-  confirmLabel?: string;
-  cancelLabel?: string;
-  onConfirm: () => void;
-  onCancel: () => void;
-}
-```
 
 ## Features
 

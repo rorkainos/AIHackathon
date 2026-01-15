@@ -4,21 +4,9 @@ tags:
   - layout
 ---
 
-# Layout Component
-
-**Location**: [src/components/layout/Layout.tsx](../../../../src/components/layout/Layout.tsx)
-
-**Category**: Layout Components
+# Layout
 
 Main layout wrapper providing consistent page structure.
-
-## Props
-
-```typescript
-interface LayoutProps {
-  children: React.ReactNode;
-}
-```
 
 ## Features
 

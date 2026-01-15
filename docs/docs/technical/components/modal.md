@@ -5,24 +5,9 @@ tags:
   - ui
 ---
 
-# Modal Component
-
-**Location**: [src/components/common/Modal.tsx](../../../../src/components/common/Modal.tsx)
-
-**Category**: Common Components
+# Modal
 
 Overlay modal for displaying forms and content above the main interface.
-
-## Props
-
-```typescript
-interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  title: string;
-  children: React.ReactNode;
-}
-```
 
 ## Features
 

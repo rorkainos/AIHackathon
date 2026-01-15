@@ -320,7 +320,11 @@ Generate or update Markdown (.md) files in the `docs/docs/technical/` directory.
 docs/docs/technical/
 ├── index.md                  # Overview and navigation
 ├── architecture.md           # System architecture
-├── components.md             # Component documentation
+├── components/               # Component documentation folder
+│   ├── _index.md            # Components overview (Location, Category info)
+│   ├── button.md            # Individual component (no Location/Category/Props)
+│   ├── modal.md
+│   └── ...
 ├── state-management.md       # State management
 ├── data-models.md           # Data models and types
 ├── utilities.md             # Utility functions
@@ -329,7 +333,81 @@ docs/docs/technical/
 └── build-deployment.md      # Build and deployment
 ```
 
-Also update: `docs/mkdocs.yml` to include technical documentation in navigation.
+### Folder Structure Guidelines
+
+When creating or amending folders for grouped documentation (e.g., components, utilities by category):
+
+1. **Create `_index.md` Overview**: 
+   - Place an `_index.md` file in the folder root for easier access
+   - This file should contain:
+     - General category information (e.g., "Common Components", "Layout Components")
+     - Location patterns (e.g., "All common components are in `src/components/common/`")
+     - Category descriptions and purposes
+     - Links to all files in the folder
+     - Shared concepts (e.g., Props interfaces patterns, common usage)
+
+2. **Individual Files Should NOT Include**:
+   - **Location** field (generalized in `_index.md`)
+   - **Category** field (implied by folder structure and `_index.md`)
+   - **Props** section as a standalone (integrate into main content or examples)
+   
+3. **Individual Files SHOULD Include**:
+   - Component/item name as heading
+   - Description and purpose
+   - Usage examples with code
+   - Features and capabilities
+   - Related documentation links
+
+**Example `_index.md`**:
+```markdown
+# Common Components
+
+**Location**: `src/components/common/`
+
+Reusable UI components used throughout the application.
+
+## Components in this Category
+
+- [Button](./button.md) - Reusable button with variants
+- [Modal](./modal.md) - Overlay modal for forms
+- [ConfirmDialog](./confirm-dialog.md) - Confirmation dialogs
+
+## Common Patterns
+
+All components in this category follow these patterns:
+- TypeScript interfaces for props
+- Forward refs where needed
+- Consistent styling with Tailwind
+```
+
+**Example Component File** (button.md):
+```markdown
+# Button
+
+Reusable button component with multiple variants and sizes.
+
+## Variants
+
+- **primary**: Blue background, primary actions (Add, Save)
+- **secondary**: Gray background, secondary actions (Cancel, Close)
+- **danger**: Red background, destructive actions (Delete)
+
+## Usage
+
+\`\`\`tsx
+import { Button } from './components/common/Button';
+
+<Button variant="primary" onClick={handleAdd}>
+  Add TODO
+</Button>
+\`\`\`
+```
+
+### MkDocs Navigation for Folders
+
+When documenting folders, update `docs/mkdocs.yml` to include technical documentation in navigation:
+
+**Navigation Structure**:
 
 **Do NOT**:
 - Render or repeat the documentation text in the chat
