@@ -7,40 +7,20 @@ nav:
   - Technical Documentation:
       - Overview: technical/index.md
       - Architecture: technical/architecture.md
-      - Components:
-          - Overview: technical/components/_index.md 
-          - Common:
-              - Button: technical/components/button.md
-              - Modal: technical/components/modal.md
-              - ConfirmDialog: technical/components/confirm-dialog.md
-          - Layout:
-              - Layout: technical/components/layout.md
-              - Header: technical/components/header.md
-          - Calendar:
-              - CalendarView: technical/components/calendar-view.md
-              - CalendarDay: technical/components/calendar-day.md
-          - Timeline:
-              - TimelineView: technical/components/timeline-view.md
-              - TimelineGroup: technical/components/timeline-group.md
-          - Todo:
-              - TodoList: technical/components/todo-list.md
-              - TodoItem: technical/components/todo-item.md
-              - TodoForm: technical/components/todo-form.md
-              - CountdownTimer: technical/components/countdown-timer.md
+      - Components: technical/components.md
       - State Management: technical/state-management.md
       - Data Models: technical/data-models.md
       - Utilities: technical/utilities.md
       - Custom Hooks: technical/hooks.md
       - Styling: technical/styling.md
       - Build & Deployment: technical/build-deployment.md
+      - FAQ: technical/faq.md
   - Business Documentation:
       - Overview: business/index.md
-      - Views:
-          - Calendar View: business/views/calendar.md
-          - Timeline View: business/views/timeline.md
-      - Actions:
-          - Create Todo: business/actions/create-todo.md
-          - Update Todo: business/actions/update-todo.md
-          - Delete Todo: business/actions/delete-todo.md
-          - Complete Day: business/actions/complete-day.md
+      - Todo Actions:
+          - Create Todo: business/create-todo.md
+          - Read Todo: business/read-todo.md
+          - Update Todo: business/update-todo.md
+          - Delete Todo: business/delete-todo.md
+          - Complete Day: business/complete-day.md
   - Tags: tags.md
