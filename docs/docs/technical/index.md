@@ -1,6 +1,6 @@
 # Technical Documentation
 
-**Last Updated**: 2026-01-14
+**Last Updated**: 2026-01-15
 
 ## Overview
 
@@ -122,6 +122,20 @@ Information about the build process, development workflow, and deployment.
 - Deployment options
 - CI/CD pipeline examples
 - Development workflow
+
+---
+
+### [FAQ](./faq.md)
+Frequently asked questions and answers for developers new to the codebase.
+
+**Topics Covered**:
+
+- State management questions
+- Component questions
+- Hooks and utilities questions
+- Styling questions
+- Development workflow questions
+- Troubleshooting common issues
 
 ---
 

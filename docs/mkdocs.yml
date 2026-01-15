@@ -33,6 +33,7 @@ nav:
       - Custom Hooks: technical/hooks.md
       - Styling: technical/styling.md
       - Build & Deployment: technical/build-deployment.md
+      - FAQ: technical/faq.md
   - Business Documentation:
       - Overview: business/index.md
       - Todo Actions:
