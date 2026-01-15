@@ -218,18 +218,18 @@ docs/docs/technical/
 
    **File-Specific Content Guidelines**:
 
-   | File                    | Required Sections                                                       | Optional Sections                      | Do NOT Include                                                 |
-   | ----------------------- | ----------------------------------------------------------------------- | -------------------------------------- | -------------------------------------------------------------- |
-   | **index.md**            | Overview, Navigation links, Quick reference table                       | Recent changes summary                 | Detailed explanations (link to specific pages)                 |
-   | **architecture.md**     | Tech stack, Folder structure, Design patterns, Data flow diagram        | Decision rationale, Scalability notes  | Code examples (keep high-level)                                |
-   | **components.md**       | Component hierarchy, Props interfaces, Usage examples                   | Accessibility notes, Performance tips  | Implementation internals                                       |
-   | **state-management.md** | Store structure, Actions list, Persistence details, State shape         | Selectors, Derived state               | UI logic details                                               |
-   | **data-models.md**      | All interfaces/types with full definitions, Type relationships          | Validation rules, Enums                | Usage examples (link to relevant pages)                        |
-   | **utilities.md**        | Function name, Example usage only                                       | -                                      | Descriptions, Parameters, Return types, Implementation details |
-   | **hooks.md**            | Hook name, Purpose, Parameters, Return value, Usage example             | Dependencies, Edge cases               | Internal implementation                                        |
-   | **styling.md**          | Tailwind config, Theme colours, Responsive breakpoints, Common patterns | Dark mode, Animations                  | Component-specific styles (belongs in components.md)           |
-   | **build-deployment.md** | Build commands, Environment variables, Deployment steps                 | CI/CD config, Performance optimisation | Runtime behaviour                                              |
-   | **faq.md**              | Q&A format, Clear answers, Links to docs                                | Code snippets, Troubleshooting steps   | Duplicate content (link instead), Opinion-based answers        |
+   | File                    | Required Sections                                                       | Do NOT Include                                                                                |
+   | ----------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+   | **index.md**            | Overview, Navigation links, Quick reference table                       | Detailed explanations (link to specific pages), Recent changes summary                        |
+   | **architecture.md**     | Tech stack, Folder structure, Design patterns, Data flow diagram        | Code examples (keep high-level), Decision rationale, Scalability notes                        |
+   | **components.md**       | Component hierarchy, Props interfaces, Usage examples                   | Implementation internals, Accessibility notes, Performance tips                               |
+   | **state-management.md** | Store structure, Actions list, Persistence details, State shape         | UI logic details, Selectors, Derived state                                                    |
+   | **data-models.md**      | All interfaces/types with full definitions, Type relationships          | Usage examples (link to relevant pages), Validation rules, Enums                              |
+   | **utilities.md**        | Function name, Example usage only                                       | Descriptions, Parameters, Return types, Implementation details                                |
+   | **hooks.md**            | Hook name, Purpose, Parameters, Return value, Usage example             | Internal implementation, Dependencies, Edge cases                                             |
+   | **styling.md**          | Tailwind config, Theme colours, Responsive breakpoints, Common patterns | Component-specific styles (belongs in components.md), Dark mode, Animations                   |
+   | **build-deployment.md** | Build commands, Environment variables, Deployment steps                 | Runtime behaviour, CI/CD config, Performance optimisation                                     |
+   | **faq.md**              | Q&A format, Clear answers, Links to docs                                | Duplicate content (link instead), Opinion-based answers, Code snippets, Troubleshooting steps |
 
    **Section Templates by File**:
 

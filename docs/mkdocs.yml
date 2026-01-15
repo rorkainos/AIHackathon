@@ -8,7 +8,7 @@ nav:
       - Overview: technical/index.md
       - Architecture: technical/architecture.md
       - Components:
-          - Overview: technical/components/_index.md 
+          - Overview: technical/components/_index.md
           - Common:
               - Button: technical/components/button.md
               - Modal: technical/components/modal.md
