@@ -4,23 +4,9 @@ tags:
   - layout
 ---
 
-# Header Component
-
-**Location**: [src/components/layout/Header.tsx](../../../../src/components/layout/Header.tsx)
-
-**Category**: Layout Components
+# Header
 
 Application header with navigation and primary actions.
-
-## Props
-
-```typescript
-interface HeaderProps {
-  viewMode: ViewMode;
-  onViewModeChange: (mode: ViewMode) => void;
-  onAddTodo: () => void;
-}
-```
 
 ## Features
 

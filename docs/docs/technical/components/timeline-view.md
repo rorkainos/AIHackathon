@@ -4,26 +4,9 @@ tags:
   - timeline
 ---
 
-# TimelineView Component
-
-**Location**: [src/components/timeline/TimelineView.tsx](../../../../src/components/timeline/TimelineView.tsx)
-
-**Category**: Timeline Components
+# TimelineView
 
 Chronological list of all todos grouped by date.
-
-## Props
-
-```typescript
-interface TimelineViewProps {
-  todos: Todo[];
-  completedDays: CompletedDay[];
-  onEditTodo: (todo: Todo) => void;
-  onDeleteTodo: (id: string) => void;
-  onToggleTodo: (id: string) => void;
-  onCompleteDay: (date: string) => void;
-}
-```
 
 ## Features
 

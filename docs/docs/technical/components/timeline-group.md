@@ -4,27 +4,9 @@ tags:
   - timeline
 ---
 
-# TimelineGroup Component
-
-**Location**: [src/components/timeline/TimelineGroup.tsx](../../../../src/components/timeline/TimelineGroup.tsx)
-
-**Category**: Timeline Components
+# TimelineGroup
 
 Groups todos for a specific date with completion action.
-
-## Props
-
-```typescript
-interface TimelineGroupProps {
-  date: string;
-  todos: Todo[];
-  isCompleted: boolean;
-  onEditTodo: (todo: Todo) => void;
-  onDeleteTodo: (id: string) => void;
-  onToggleTodo: (id: string) => void;
-  onCompleteDay: () => void;
-}
-```
 
 ## Features
 

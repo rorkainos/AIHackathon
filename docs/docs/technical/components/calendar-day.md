@@ -4,26 +4,9 @@ tags:
   - calendar
 ---
 
-# CalendarDay Component
-
-**Location**: [src/components/calendar/CalendarDay.tsx](../../../../src/components/calendar/CalendarDay.tsx)
-
-**Category**: Calendar Components
+# CalendarDay
 
 Individual day cell in the calendar grid.
-
-## Props
-
-```typescript
-interface CalendarDayProps {
-  date: Date;
-  isCurrentMonth: boolean;
-  isToday: boolean;
-  todoCount: number;
-  isCompleted: boolean;
-  onClick: () => void;
-}
-```
 
 ## Features
 

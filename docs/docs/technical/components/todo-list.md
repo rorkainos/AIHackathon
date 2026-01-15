@@ -4,25 +4,9 @@ tags:
   - todo
 ---
 
-# TodoList Component
-
-**Location**: [src/components/todo/TodoList.tsx](../../../../src/components/todo/TodoList.tsx)
-
-**Category**: Todo Components
+# TodoList
 
 List container for todo items.
-
-## Props
-
-```typescript
-interface TodoListProps {
-  todos: Todo[];
-  isCompleted: boolean;
-  onEditTodo: (todo: Todo) => void;
-  onDeleteTodo: (id: string) => void;
-  onToggleTodo: (id: string) => void;
-}
-```
 
 ## Features
 

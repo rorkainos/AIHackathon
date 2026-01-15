@@ -5,24 +5,9 @@ tags:
   - ui
 ---
 
-# Button Component
-
-**Location**: [src/components/common/Button.tsx](../../../../src/components/common/Button.tsx)
-
-**Category**: Common Components
+# Button
 
 Reusable button component with multiple variants and sizes.
-
-## Props
-
-```typescript
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'danger';
-  size?: 'sm' | 'md' | 'lg';
-  fullWidth?: boolean;
-  children: React.ReactNode;
-}
-```
 
 ## Variants
 

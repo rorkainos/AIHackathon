@@ -4,25 +4,9 @@ tags:
   - todo
 ---
 
-# TodoItem Component
-
-**Location**: [src/components/todo/TodoItem.tsx](../../../../src/components/todo/TodoItem.tsx)
-
-**Category**: Todo Components
+# TodoItem
 
 Individual todo card with actions.
-
-## Props
-
-```typescript
-interface TodoItemProps {
-  todo: Todo;
-  isLocked: boolean;
-  onEdit: () => void;
-  onDelete: () => void;
-  onToggle: () => void;
-}
-```
 
 ## Features
 
