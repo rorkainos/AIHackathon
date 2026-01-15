@@ -1,0 +1,69 @@
+{
+    "title": "TrueDocs: Hackathon Presentation",
+    "authors": ["TrueDocs Team"],
+    "description": "A presentation showcasing TrueDocs, our AI-powered solution that addresses documentation gaps in both business and technical domains through automated, versioned documentation updates as part of the Definition of Done.",
+    "audience": "Judging panel for the Kainos AI Hackathon including developers, architects, QAs, and stakeholders",
+    "style": "Professional and engaging, with clear problem-solution structure and visual demonstrations",
+    "theme": "academic",
+    "language": "English",
+    "slides": [
+        {
+            "description": "Introduction to TrueDocs - overview of the hackathon project and team",
+            "details": {
+                "Team Members": ["Alice", "Bob", "Charlie", "Diana", "Ethan"],
+                "Project Goal": "To create an AI-powered solution that automates documentation updates for both business and technical domains"
+            }
+        },
+        {
+            "description": "TrueDocs Business: Business Documentation Tracking - understanding implemented functionality is slow and costly",
+            "details": "As projects scale, business context becomes fragmented across tools like Jira and Confluence, creating gaps between requirements and delivered behavior"
+        },
+        {
+            "description": "TrueDocs Tech: Technical Documentation Tracking - knowledge scattered across code and outdated docs",
+            "details": "New joiners struggle with onboarding, increasing reliance on seniors and slowing development in large projects" 
+        },
+        {
+            "description": "Our Solution: AI-powered documentation updates for both domains",
+            "details": "Add an AI-powered step to the Definition of Done that updates both business and technical documentation for each completed story. For business docs, AI uses Jira and Confluence to draft business rules summaries. For technical docs, AI uses code changes and Jira to draft technical decisions and dependencies. The owner of the ticket reviews and commits the updates to source control for versioning and traceability."
+        },
+        {
+            "description": "Value Proposition - benefits for the company, the team, and clients",
+            "details": "Single source of truth for business rules and technical knowledge, faster decision-making, reduced senior dependency, smoother onboarding, better AI assistance, early discrepancy detection, higher engineering quality, and improved client satisfaction."
+        },
+        {
+            "description": "Demo - showing how TrueDocs works in practice",
+            "details": "Demo of the AI documentation generation process and integration with development workflow"
+        },
+        {
+            "description": "What We Accomplished - key activities during the hackathon", 
+            "details": {
+                "activities": [
+                    "setup a new repo for hackaton",
+                    "generated a sample TODO management app to use as base for testing the documentation update process",
+                    "created basic tech and business documentation in the /docs folder in the repo that describes functionality of the TODO app",
+                    "added mkdocs tool for deploying the documentation from markdown so it can be exposed to business people",
+                    "setup jira for the project and generated sample jira tickets for the TODO app",
+                    "created prompt for generating a commit with docs update with developer involvement",
+                    "create a prompt for querying the documentation to get information about how system works or how sth is implemented"
+                ]
+            }
+        },
+        {
+            "description": "Impact and Next Steps - summary of benefits and future development plans",
+            "details": "What comes next for the project",
+            "immediate-plans": [
+                "Run pilot in Digital NHS Health Checks project",
+                "Refine AI prompts and integration based on real-world use",
+                "Gather feedback from users and stakeholders"
+            ],
+            "future_plans": [
+                "Verify ability to perform discrepancy checks between code and business requirements",
+                "Use the documentation to plan for onboarding new joiners",
+                "Expand to other company projects - potentially make the tool available via Instructo developed by another Hackathon team"
+            ]
+        },
+        {
+            "description": "Q&A - open floor for questions and discussion"
+        }
+    ]
+}
