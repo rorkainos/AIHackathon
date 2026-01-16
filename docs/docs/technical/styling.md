@@ -61,7 +61,6 @@ export default {
 | Main content | `white`    |
 | Subtle       | `gray-50`  |
 | Borders      | `gray-100` |
-| Past days    | `gray-100` |
 
 ---
 

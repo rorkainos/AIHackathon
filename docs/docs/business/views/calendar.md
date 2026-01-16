@@ -28,7 +28,6 @@ Select "Calendar" from the header navigation
 - Completed days are highlighted with yellow background and a lock icon below the day number
 - Incomplete days have white background
 - Days falling outside of the currently viewed month are grayed out
-- Past days are displayed with a subtle light grey styling to visually distinguish them from today and future days, while remaining fully interactive and clickable
 
 ## Interaction
 
