@@ -20,6 +20,7 @@ export const CalendarDay: React.FC<CalendarDayProps> = ({
   const dayNumber = parseInt(date.split("-")[2]);
   const today = getTodayDate();
   const isToday = date === today;
+  const isPastDay = date < today;
 
   const hasTodos = todos.length > 0;
 
@@ -34,13 +35,17 @@ export const CalendarDay: React.FC<CalendarDayProps> = ({
             ? "bg-white hover:bg-blue-50 hover:border-blue-300"
             : "bg-gray-50 border-gray-100"
         }
-
+        ${isPastDay && isCurrentMonth ? "bg-gray-100 border-gray-300" : ""}
         ${isCompleted ? "border-yellow-300 bg-yellow-50" : ""}
       `}
     >
       <div
         className={`font-semibold mb-1 ${
-          isCurrentMonth ? "text-gray-900" : "text-gray-400"
+          isCurrentMonth
+            ? isPastDay
+              ? "text-gray-400"
+              : "text-gray-900"
+            : "text-gray-400"
         }`}
       >
         {dayNumber}
