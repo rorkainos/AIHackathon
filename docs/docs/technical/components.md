@@ -104,6 +104,12 @@ interface CalendarDayProps {
 }
 ```
 
+**Behaviour Notes**:
+
+- Determines if day is in the past by comparing `date` against `getTodayDate()`
+- Past days display with subtle grey styling (`bg-gray-100`, `text-gray-400`) while remaining fully interactive
+- Today is highlighted with a stronger blue border (`border-4 border-blue-500`)
+
 ### TimelineView
 
 ```typescript

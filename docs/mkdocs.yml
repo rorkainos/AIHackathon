@@ -17,6 +17,9 @@ nav:
       - FAQ: technical/faq.md
   - Business Documentation:
       - Overview: business/index.md
+      - Views:
+          - Calendar View: business/views/calendar.md
+          - Timeline View: business/views/timeline.md
       - Todo Actions:
           - Create Todo: business/create-todo.md
           - Read Todo: business/read-todo.md

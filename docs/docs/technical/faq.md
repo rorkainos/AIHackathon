@@ -62,6 +62,14 @@ The CalendarDay component uses a stronger border (`border-4`) for the current da
 
 ---
 
+### How are past days styled differently in the calendar?
+
+Past days are displayed with a subtle grey styling (`bg-gray-100`, `text-gray-400`) to visually distinguish them from today and future days. The CalendarDay component compares the `date` prop against `getTodayDate()` to determine if a day is in the past. Past days remain fully interactive and clickable.
+
+**See also**: [Components](components.md), [Styling](styling.md)
+
+---
+
 ### How do I create a new component?
 
 Create a file in the appropriate folder under `src/components/`, define a TypeScript interface for props, and export as a named export.
