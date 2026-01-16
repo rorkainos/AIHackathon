@@ -1,10 +1,18 @@
 // Todo item interface
+export type RecurrenceFrequency = 'daily' | 'weekly' | 'monthly' | 'yearly';
+
+export interface TodoRecurrence {
+  frequency: RecurrenceFrequency;
+  endDate?: string;             // YYYY-MM-DD format (optional)
+}
+
 export interface Todo {
   id: string;                    // UUID
   title: string;
   description: string;
   dueDateTime: string;           // ISO 8601 format
   completed: boolean;
+  recurrence?: TodoRecurrence;    // Optional recurring schedule
   createdAt: string;             // ISO 8601 format
   updatedAt: string;             // ISO 8601 format
 }

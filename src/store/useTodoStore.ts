@@ -1,7 +1,31 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { Todo, CompletedDay, TodoStore } from '../types';
+import { Todo, CompletedDay, TodoStore, RecurrenceFrequency } from '../types';
 import { normalizeDate } from '../utils/dateUtils';
+import { addDays, addWeeks, addMonths, addYears } from 'date-fns';
+
+const getNextDueDateTime = (dueDateTime: string, frequency: RecurrenceFrequency): string => {
+  const current = new Date(dueDateTime);
+
+  const next = (() => {
+    switch (frequency) {
+      case 'daily':
+        return addDays(current, 1);
+      case 'weekly':
+        return addWeeks(current, 1);
+      case 'monthly':
+        return addMonths(current, 1);
+      case 'yearly':
+        return addYears(current, 1);
+      default: {
+        const exhaustiveCheck: never = frequency;
+        return exhaustiveCheck;
+      }
+    }
+  })();
+
+  return next.toISOString();
+};
 
 const useTodoStore = create<TodoStore>()(
   persist(
@@ -74,6 +98,17 @@ const useTodoStore = create<TodoStore>()(
       },
 
       toggleTodo: (id) => {
+        const existing = get().todos.find((t) => t.id === id);
+        if (!existing) return;
+
+        const dateStr = normalizeDate(existing.dueDateTime);
+        if (get().isDayCompleted(dateStr)) {
+          throw new Error('Cannot modify TODO from a completed day');
+        }
+
+        const isCompleting = !existing.completed;
+
+        // First: toggle completion state
         set((state) => ({
           todos: state.todos.map((t) =>
             t.id === id
@@ -81,6 +116,57 @@ const useTodoStore = create<TodoStore>()(
               : t
           ),
         }));
+
+        // Then: if completing a recurring TODO, generate next occurrence
+        if (isCompleting && existing.recurrence) {
+          const nextDueDateTime = getNextDueDateTime(
+            existing.dueDateTime,
+            existing.recurrence.frequency
+          );
+
+          // Avoid creating duplicates if the user toggles completion multiple times
+          const alreadyExists = get().todos.some(
+            (t) =>
+              t.dueDateTime === nextDueDateTime &&
+              t.title === existing.title &&
+              t.description === existing.description &&
+              t.recurrence?.frequency === existing.recurrence?.frequency &&
+              (t.recurrence?.endDate || '') === (existing.recurrence?.endDate || '')
+          );
+          if (alreadyExists) {
+            return;
+          }
+
+          // If endDate is set, only create next occurrence if next date is <= endDate
+          if (existing.recurrence.endDate) {
+            const nextDateStr = normalizeDate(nextDueDateTime);
+            if (nextDateStr.localeCompare(existing.recurrence.endDate) > 0) {
+              return;
+            }
+          }
+
+          const nextDateStr = normalizeDate(nextDueDateTime);
+
+          // Respect locked days: if next occurrence falls on a completed day, skip creation.
+          if (get().isDayCompleted(nextDateStr)) {
+            return;
+          }
+
+          const newTodo: Todo = {
+            id: crypto.randomUUID(),
+            title: existing.title,
+            description: existing.description,
+            dueDateTime: nextDueDateTime,
+            completed: false,
+            recurrence: existing.recurrence,
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
+          };
+
+          set((state) => ({
+            todos: [...state.todos, newTodo],
+          }));
+        }
       },
 
       completeDay: (date) => {

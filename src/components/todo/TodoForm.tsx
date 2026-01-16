@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Todo } from '../../types';
+import { RecurrenceFrequency, Todo } from '../../types';
 import { Button } from '../common/Button';
 
 interface TodoFormProps {
@@ -14,6 +14,13 @@ export const TodoForm: React.FC<TodoFormProps> = ({ mode, initialData, onSubmit,
   const [description, setDescription] = useState(initialData?.description || '');
   const [dueDateTime, setDueDateTime] = useState(
     initialData ? initialData.dueDateTime.slice(0, 16) : ''
+  );
+  const [isRecurring, setIsRecurring] = useState(Boolean(initialData?.recurrence));
+  const [recurrenceFrequency, setRecurrenceFrequency] = useState<RecurrenceFrequency>(
+    initialData?.recurrence?.frequency || 'weekly'
+  );
+  const [recurrenceEndDate, setRecurrenceEndDate] = useState(
+    initialData?.recurrence?.endDate || ''
   );
   const [error, setError] = useState<string | null>(null);
 
@@ -32,11 +39,25 @@ export const TodoForm: React.FC<TodoFormProps> = ({ mode, initialData, onSubmit,
       return;
     }
 
+    if (isRecurring && recurrenceEndDate) {
+      const dueDateStr = new Date(dueDateTime).toISOString().slice(0, 10);
+      if (recurrenceEndDate.localeCompare(dueDateStr) < 0) {
+        setError('Recurrence end date cannot be before the due date');
+        return;
+      }
+    }
+
     try {
       onSubmit({
         title: title.trim(),
         description: description.trim(),
         dueDateTime: new Date(dueDateTime).toISOString(),
+        recurrence: isRecurring
+          ? {
+              frequency: recurrenceFrequency,
+              endDate: recurrenceEndDate || undefined,
+            }
+          : undefined,
       });
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to save TODO');
@@ -85,6 +106,57 @@ export const TodoForm: React.FC<TodoFormProps> = ({ mode, initialData, onSubmit,
           onChange={(e) => setDueDateTime(e.target.value)}
           className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
+      </div>
+
+      {/* Recurrence */}
+      <div className="border border-gray-200 rounded-lg p-3">
+        <div className="flex items-center gap-2">
+          <input
+            id="todo-recurring"
+            type="checkbox"
+            checked={isRecurring}
+            onChange={(e) => setIsRecurring(e.target.checked)}
+            className="w-4 h-4 text-blue-600 rounded cursor-pointer"
+          />
+          <label htmlFor="todo-recurring" className="text-sm font-medium text-gray-700">
+            Recurring
+          </label>
+        </div>
+
+        {isRecurring && (
+          <div className="mt-3 space-y-3">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Frequency
+              </label>
+              <select
+                value={recurrenceFrequency}
+                onChange={(e) => setRecurrenceFrequency(e.target.value as RecurrenceFrequency)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+                <option value="yearly">Yearly</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                End Date (optional)
+              </label>
+              <input
+                type="date"
+                value={recurrenceEndDate}
+                onChange={(e) => setRecurrenceEndDate(e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <div className="mt-1 text-xs text-gray-500">
+                Leave blank to repeat indefinitely.
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Actions */}
