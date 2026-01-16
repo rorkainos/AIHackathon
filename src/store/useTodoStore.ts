@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { Todo, CompletedDay, TodoStore } from '../types';
-import { normalizeDate } from '../utils/dateUtils';
+import { normalizeDate, getNextDay } from '../utils/dateUtils';
 
 const useTodoStore = create<TodoStore>()(
   persist(
@@ -86,6 +86,35 @@ const useTodoStore = create<TodoStore>()(
       completeDay: (date) => {
         const todosForDay = get().getTodosByDate(date);
         const todoIds = todosForDay.map((t) => t.id);
+
+        const unfinishedTodos = todosForDay.filter((t) => !t.completed);
+        
+        const nextDay = getNextDay(date);
+
+        if (unfinishedTodos.length > 0) {
+          set((state) => ({
+            todos: state.todos.map((t) => {
+              if (unfinishedTodos.some((ut) => ut.id === t.id)) {
+                // Keep the same time but change the date
+                const currentDateTime = new Date(t.dueDateTime);
+                const targetDateTime = new Date(nextDay);
+                targetDateTime.setHours(
+                  currentDateTime.getHours(),
+                  currentDateTime.getMinutes(),
+                  currentDateTime.getSeconds(),
+                  currentDateTime.getMilliseconds()
+                );
+                
+                return {
+                  ...t,
+                  dueDateTime: targetDateTime.toISOString(),
+                  updatedAt: new Date().toISOString(),
+                };
+              }
+              return t;
+            }),
+          }));
+        }
 
         const completedDay: CompletedDay = {
           date,

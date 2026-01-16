@@ -61,3 +61,10 @@ export const normalizeDate = (date: string | Date): string => {
 export const getTodayDate = (): string => {
   return format(startOfDay(new Date()), 'yyyy-MM-dd');
 };
+
+// Get the next day from a given date as YYYY-MM-DD
+export const getNextDay = (date: string | Date): string => {
+  const nextDay = new Date(date);
+  nextDay.setDate(nextDay.getDate() + 1);
+  return format(startOfDay(nextDay), 'yyyy-MM-dd');
+};
