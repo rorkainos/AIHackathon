@@ -44,12 +44,28 @@ export const TodoItem: React.FC<TodoItemProps> = ({
 
         {/* Content */}
         <div className="flex-grow min-w-0">
-          <div
-            className={`text-lg font-semibold ${
-              todo.completed ? 'line-through text-gray-500' : 'text-gray-900'
-            }`}
-          >
-            {todo.title}
+          <div className="flex items-start gap-2">
+            <div
+              className={`text-lg font-semibold ${
+                todo.completed ? 'line-through text-gray-500' : 'text-gray-900'
+              }`}
+            >
+              {todo.title}
+            </div>
+
+            {todo.recurrence && (
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-purple-100 text-purple-700 flex-shrink-0">
+                <svg
+                  className="w-3 h-3"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  aria-hidden="true"
+                >
+                  <path d="M4 4a8 8 0 111.9 11.4.75.75 0 11.83-1.22A6.5 6.5 0 105.5 5.2V7a.75.75 0 01-1.28.53l-2-2a.75.75 0 010-1.06l2-2A.75.75 0 015.5 3v1.13A7.96 7.96 0 014 4z" />
+                </svg>
+                {todo.recurrence.frequency}
+              </span>
+            )}
           </div>
 
           {todo.description && (
